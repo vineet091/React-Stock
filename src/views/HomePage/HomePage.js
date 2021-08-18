@@ -7,7 +7,7 @@ import { debounce } from "../../utils/utils";
 import { getStocksAPI } from "../../actions/fetchData";
 import "./styles.css";
 
-function Home({ history, stockList, error, getStocksAPI }) {
+function Home({ history, stockList, error, getStocksAPI, loading }) {
   const [searchText, setSearchText] = useState("");
   const [errorText, setErrorText] = useState("");
   const fetchData = (value) => {
@@ -37,6 +37,7 @@ function Home({ history, stockList, error, getStocksAPI }) {
       <div class="search-box">
         <Autocomplete
           freeSolo
+          loading={loading}
           disableClearable
           id="stock-search-input"
           classes={{
@@ -84,7 +85,8 @@ function Home({ history, stockList, error, getStocksAPI }) {
 
 const mapStateToProps = (state) => ({
   stockList: state.stocks.stockList,
-  error: state.stocks.error
+  error: state.stocks.error,
+  loading: state.stocks.loading
 });
 
 const mapDispatchToProps = (dispatch) => ({
