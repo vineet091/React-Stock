@@ -1,0 +1,59 @@
+.home {
+  padding: 40px 20px;
+}
+
+.home-title {
+  margin-bottom: 0px;
+  font-size: 30px;
+}
+.search-autocomplete-root {
+  width: 70%;
+  display: inline-block;
+}
+
+.search-autocomplete {
+  height: 40px;
+  vertical-align: middle;
+}
+
+.MuiInput-underline {
+  height: 40px;
+}
+
+.MuiInputBase-input {
+  padding: 0px;
+}
+
+.MuiFormHelperText-contained,
+.MuiFormHelperText-root {
+  margin-left: 2px;
+}
+
+.search-input {
+  padding: 0px !important;
+}
+
+.btn-search {
+  margin-left: 20px;
+  margin-top: 16px;
+  background-color: #173ccf;
+  color: #fff;
+  border: 1px solid #173ccf;
+  min-width: 100px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+@media (max-width: 599px) {
+  .search-autocomplete-root {
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+  }
+  .btn-search {
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+}

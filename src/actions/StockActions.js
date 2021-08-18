@@ -1,25 +1,50 @@
 import {
-  SEARCH_STOCKS_BY_SYMBOL,
-  SEARCH_STOCKS_BY_SYMBOL_SUCCESS,
-  SEARCH_STOCKS_BY_SYMBOL_ERROR
+  GET_STOCKS,
+  GET_STOCKS_SUCCESS,
+  GET_STOCKS_ERROR,
+  GET_STOCK_BY_SYMBOL,
+  GET_STOCK_BY_SYMBOL_SUCCESS,
+  GET_STOCK_BY_SYMBOL_ERROR
 } from "./ActionTypes";
 
-export function searchStocksBySymbol() {
+//Search Actions
+export const getStocks = () => {
   return {
-    type: SEARCH_STOCKS_BY_SYMBOL
+    type: GET_STOCKS
   };
-}
+};
 
-export function searchStocksBySymbolSuccess(stocks) {
+export const getStocksSuccess = (stocks) => {
   return {
-    type: SEARCH_STOCKS_BY_SYMBOL_SUCCESS,
+    type: GET_STOCKS_SUCCESS,
     stocks
   };
-}
+};
 
-export function searchStocksBySymbolError(error) {
+export const getStocksError = (error) => {
   return {
-    type: SEARCH_STOCKS_BY_SYMBOL_ERROR,
-    payload: { error }
+    type: GET_STOCKS_ERROR,
+    error
   };
-}
+};
+
+//Get Stock by symbol Actions
+export const getStockBySymbol = () => {
+  return {
+    type: GET_STOCK_BY_SYMBOL
+  };
+};
+
+export const getStockBySymbolSuccess = (stock) => {
+  return {
+    type: GET_STOCK_BY_SYMBOL_SUCCESS,
+    stock
+  };
+};
+
+export const getStockBySymbolError = (error) => {
+  return {
+    type: GET_STOCK_BY_SYMBOL_ERROR,
+    error
+  };
+};

@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
-import { Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import HomePage from "./views/HomePage/HomePage";
-import history from "./history";
+import NotFound from "./views/NotFound/NotFound";
+// import history from "./history";
 import StockDetailPage from "./views/StockDetailsPage/StockDetailsPage";
 export default class App extends PureComponent {
   render() {
@@ -9,12 +10,13 @@ export default class App extends PureComponent {
       <div className="app-wrapper">
         {/* <Loader />
         <Message /> */}
-        <Router history={history}>
+        <BrowserRouter>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/stock/:symbol" component={StockDetailPage} />
+            <Route component={NotFound} />
           </Switch>
-        </Router>
+        </BrowserRouter>
       </div>
     );
   }
