@@ -14,8 +14,8 @@ function reducer(state = initialState, action) {
         loading: true,
         error: ""
       };
-    case "GET_STOCKS_SUCCESS":
-      var error = "";
+    case "GET_STOCKS_SUCCESS": {
+      let error = "";
       if (action.stocks && !action.stocks.bestMatches) {
         error = "Unable to fetch data!";
       }
@@ -28,6 +28,7 @@ function reducer(state = initialState, action) {
             ? action.stocks.bestMatches
             : []
       };
+    }
     case "GET_STOCKS_ERROR":
       return {
         ...state,
@@ -44,12 +45,18 @@ function reducer(state = initialState, action) {
         loading: true,
         error: ""
       };
-    case "GET_STOCK_BY_SYMBOL_SUCCESS":
+    case "GET_STOCK_BY_SYMBOL_SUCCESS": {
+      let error = "";
+      if (action.stock && action.stock.Note) {
+        error = "Unable to fetch data!";
+      }
       return {
         ...state,
+        error,
         loading: false,
         stock: action.stock
       };
+    }
     case "GET_STOCK_BY_SYMBOL_ERROR":
       return {
         ...state,

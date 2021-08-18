@@ -5,7 +5,14 @@ import { getStockBySymbolAPI } from "../../actions/fetchData";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { withRouter } from "react-router-dom";
 
-function StockDetail({ match, getStockBySymbolAPI, history, stock, loading }) {
+function StockDetail({
+  match,
+  getStockBySymbolAPI,
+  history,
+  stock,
+  loading,
+  error
+}) {
   useEffect(() => {
     if (match.params.symbol) {
       getStockBySymbolAPI(match.params.symbol);
@@ -74,7 +81,7 @@ function StockDetail({ match, getStockBySymbolAPI, history, stock, loading }) {
           {loading ? (
             <CircularProgress className="loader" />
           ) : (
-            <h2>Stock not Found!</h2>
+            <h2>{error || "Stock not Found!"}</h2>
           )}
         </div>
       )}
@@ -84,7 +91,8 @@ function StockDetail({ match, getStockBySymbolAPI, history, stock, loading }) {
 
 const mapStateToProps = (state) => ({
   stock: state.stocks.stock,
-  loading: state.stocks.loading
+  loading: state.stocks.loading,
+  error: state.stocks.error
 });
 
 const mapDispatchToProps = (dispatch) => ({
