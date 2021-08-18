@@ -1,10 +1,18 @@
 .home {
-  padding: 40px 20px;
+  height: 400px;
+}
+.home-wrapper {
+  margin: 120px auto;
+  height: 100%;
+  width: 100%;
+  text-align: center;
 }
 
 .home-title {
   margin-bottom: 0px;
-  font-size: 30px;
+  font-size: 36px;
+  color: #173ccf;
+  margin-left: -50px;
 }
 .search-autocomplete-root {
   width: 70%;
@@ -35,7 +43,7 @@
 
 .btn-search {
   margin-left: 20px;
-  margin-top: 16px;
+  margin-top: 18px;
   background-color: #173ccf;
   color: #fff;
   border: 1px solid #173ccf;
